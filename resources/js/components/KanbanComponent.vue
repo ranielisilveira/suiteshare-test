@@ -12,10 +12,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="board in kanban.lists">
-                        <td>{{ board.title }}</td>
-                        <td>{{ board.cards.length }}</td>
-                    </tr>
+                <tr>
+                    <td>{{'Fa'}}</td>
+                    <td>{{board.cards.length}}</td>
+                </tr>
                 </tbody>
             </table>
         </div>
