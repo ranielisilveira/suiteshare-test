@@ -12,10 +12,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>{{'Fa'}}</td>
-                    <td>{{board.cards.length}}</td>
-                </tr>
+                <tr :key="i" v-for="board, i in kanban.lists">
+                        <td>{{ board.title }}</td>
+                        <td>{{ board.cards.length }}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -37,7 +37,7 @@ export default {
             this.loading = true;
 
             //-> read network payload
-            const { data } = await axios.get('https://breezy-canyon-8jyhxuyv6eg3.vapor-farm-a1.com/api/kanban');
+            const { data } = await axios.get('https://demo0948629.mockable.io/api/kanban');
             this.kanban = data.boards;
 
             this.loading = false;
